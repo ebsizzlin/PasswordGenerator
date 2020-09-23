@@ -12,19 +12,13 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// variables
-// var confirmSpecial = "!$^&*-=+_?{}[]()<>|/~`';:";
-// var confirmNumber = "0123456789";
-// var confirmUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// var confirmLower = "abcdefghijklmnopqrstuvwxyz";
-
 // added later -- variable to store new pw
-var newPassword = [];
+var character_pool = [];
 
 // characters in variables arrays
-confirmNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-confirmSpecial = [
+special = [
   "!",
   "@",
   "#",
@@ -54,7 +48,7 @@ confirmSpecial = [
   ">",
 ];
 
-confirmUpper = [
+upper = [
   "A",
   "B",
   "C",
@@ -83,7 +77,7 @@ confirmUpper = [
   "Z",
 ];
 
-confirmLower = [
+lower = [
   "a",
   "b",
   "c",
@@ -137,87 +131,87 @@ function generatePassword() {
     // 1/4 chosen
   } else if (confirmNumber) {
     // value = number;
-    newPassword.push(confirmNumber);
+    character_pool.push(confirmNumber);
   } else if (confirmSpecial) {
     // value = special;
-    newPassword.push(confirmSpecial);
+    character_pool.push(confirmSpecial);
   } else if (confirmUpper) {
     // value = upper;
-    newPassword.push(confirmUpper);
+    character_pool.push(confirmUpper);
   } else if (confirmLower) {
     // value = lower;
-    newPassword.push(confirmLower);
+    character_pool.push(confirmLower);
 
     // 2/4 chosen
   } else if (confirmNumber && confirmSpecial) {
     // value = number.special;
-    newPassword.push(confirmNumber);
-    newPassword.push(confirmSpecial);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmSpecial);
   } else if (confirmNumber && confirmUpper) {
     // value = number.upper;
-    newPassword.push(confirmNumber);
-    newPassword.push(confirmUpper);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmUpper);
   } else if (confirmNumber && confirmLower) {
     // value = number.lower;
-    newPassword.push(confirmNumber);
-    newPassword.push(confirmLower);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmLower);
   } else if (confirmSpecial && confirmUpper) {
     // value = special.upper;
-    newPassword.push(confirmSpecial);
-    newPassword.push(confirmUpper);
+    character_pool.push(confirmSpecial);
+    character_pool.push(confirmUpper);
   } else if (confirmSpecial && confirmLower) {
     // value = special.lower;
-    newPassword.push(confirmSpecial);
-    newPassword.push(confirmLower);
+    character_pool.push(confirmSpecial);
+    character_pool.push(confirmLower);
   } else if (confirmUpper && confirmLower) {
     // value = upper.lower;
-    newPassword.push(confirmUpper);
-    newPassword.push(confirmLower);
+    character_pool.push(confirmUpper);
+    character_pool.push(confirmLower);
 
     // 3/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper) {
     // value = special.number.upper;
-    newPassword.push(confirmSpecial);
-    newPassword.push(confirmNumber);
-    newPassword.push(confirmUpper);
+    character_pool.push(confirmSpecial);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmUpper);
   } else if (confirmSpecial && confirmNumber && confirmLower) {
     // value = special.number.lower;
-    newPassword.push(confirmSpecial);
-    newPassword.push(confirmNumber);
-    newPassword.push(confirmLower);
+    character_pool.push(confirmSpecial);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmLower);
   } else if (confirmSpecial && confirmUpper && confirmLower) {
     // value = special.upper.lower;
-    newPassword.push(confirmSpecial);
-    newPassword.push(confirmUpper);
-    newPassword.push(confirmLower);
+    character_pool.push(confirmSpecial);
+    character_pool.push(confirmUpper);
+    character_pool.push(confirmLower);
   } else if (confirmNumber && confirmUpper && confirmLower) {
     value = number.upper.lower;
-    newPassword.push(confirmNumber);
-    newPassword.push(confirmUpper);
-    newPassword.push(confirmLower);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmUpper);
+    character_pool.push(confirmLower);
 
     // 4/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
     choice = special.number.upper.lower;
   }
-  newPassword.push(confirmSpecial);
-  newPassword.push(confirmNumber);
-  newPassword.push(confirmUpper);
-  newPassword.push(confirmLower);
+  character_pool.push(confirmSpecial);
+  character_pool.push(confirmNumber);
+  character_pool.push(confirmUpper);
+  character_pool.push(confirmLower);
 
   // added later - way to get the actual password to create itself
-  var newPassword = newPassword.join("");
-  var password = "";
+  var character_pool = character_pool.join("");
 
-  // for loop to randomly select variables
-  for (var i = 0; i < charCount; i++) {
-    var newValue =
-      newPassword.charAt[Math.floor(Math.random() * newPassword.length)];
-    console.log("newValue:", newValue);
-    // concat = joining 2+ strings without changing the original string
-    // password = password.concat(newValue);
+  // while loop added with tutor -- while the pw length is less than desired, add a random character from character_pool at the end
+  while (i < charCount) {
+    console.log("charCount:", charCount);
+    charCount += 1;
+    // character_pool += charCount[i] + "<br>";
+    // i++;
   }
-  return newPassword;
 
-  // document.getElementById("passwordText").textContent = newPassword;
+  return password;
+  //   // concat = joining 2+ strings without changing the original string
+  //   // password = password.concat(newValue);
 }
+// document.getElementById("passwordText").textContent = character_pool;
