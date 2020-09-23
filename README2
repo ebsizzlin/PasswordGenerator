@@ -1,15 +1,10 @@
 # 03 JavaScript: Password Generator
 
-this is v confusing lol
+The purpose of this assignment is to create a random password generator in a browser with prompts.
 
-Researched Plan:
+#Completed Part of Plan:
 
-#variables:
-- number of characters
-- will there be numbers
-- will there be special
-- will there be uppercase
-- will there bee lowercase
+- list variables
 
 #questions
 - how many characters ?

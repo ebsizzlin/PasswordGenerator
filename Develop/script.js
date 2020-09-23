@@ -96,6 +96,8 @@ lower = [
   "z",
 ];
 
+// i don't really understand the provided assignment code so just going for it here
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -109,3 +111,15 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// character count statements
+function generatePassword() {
+  charCount = prompt("How many characters in the password?");
+  // ! = not entered
+  if (!charCount) {
+    alert("Enter a number please!");
+    // || = or
+  } else if (charCount < 8 || charCount > 128) {
+    charCount = prompt("Pick a number between 8 and 128.");
+  }
+}
