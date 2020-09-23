@@ -129,6 +129,8 @@ function generatePassword() {
     confirmLower = confirm("Do you want to use lowercase letters?");
   }
 
+  var value;
+
   // if user chooses 0/4
   // ! = not entered // && = and
   if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
@@ -172,10 +174,6 @@ function generatePassword() {
 
   // for loop to randomly select variables
   for (var i = 0; i < 4; i++) {
-    value[Math.floor(Math.random() * value.length)];
-  }
-
-  function writePassword() {
-    document.getElementById("password");
+    var value = value[Math.floor(Math.random() * value.length)];
   }
 }
