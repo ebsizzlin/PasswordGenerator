@@ -117,9 +117,22 @@ function generatePassword() {
   charCount = prompt("How many characters in the password?");
   // ! = not entered
   if (!charCount) {
-    alert("Enter a number please!");
+    alert("Enter a number!");
     // || = or
   } else if (charCount < 8 || charCount > 128) {
     charCount = prompt("Pick a number between 8 and 128.");
+    // the other prompts under one else statement
+  } else {
+    confirmNumber = confirm("Do you want to use numbers?");
+    confirmSpecial = confirm("Do you want to use special characters?");
+    confirmUpper = confirm("Do you want to use uppercase letters?");
+    confirmLower = confirm("Do you want to use lowercase letters?");
+  }
+
+  // if user chooses 0/4
+  // ! = not entered // && = and
+  if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
+    alert("Pick at least one of the four options.");
+    // use else if for multiple options
   }
 }

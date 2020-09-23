@@ -2,25 +2,11 @@
 
 The purpose of this assignment is to create a random password generator in a browser with prompts.
 
-#Completed Part of Plan:
+#Completed:
 
 - list variables
-
-#questions
-- how many characters ?
-8-128, alert if nothing entered, alert if too low or high
-
-- click ok for special
-confirm y/n 
-
-- click ok for numbers
-confirm y/n 
-
-- click for lowercase
-confirm y/n 
-
-- click ok for uppercase
-confirm y/n 
+- questions w prompts
+- 
 
 #if user cancels all 4
 - alert have to choose
