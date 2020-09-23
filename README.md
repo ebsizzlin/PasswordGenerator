@@ -8,14 +8,13 @@ The purpose of this assignment is to create a random password generator in a bro
 - all the prompted questions are asked
 - alert for 0/4 choices
 - if and else if statements
-- for loop (maybe)
+- for loop
 - function
 
 # what's probably not working:
 
-- the for loop
-- generating the actual pw
-- i think i'll have to resubmit, i got a new job this week and fell behind
+- i couldn't generate the actual password
+- will resubmit after tutoring
 
 # screenshots
 
