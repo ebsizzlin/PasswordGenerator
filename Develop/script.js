@@ -120,7 +120,7 @@ function generatePassword() {
     alert("Enter a number!");
     // || = or
   } else if (charCount < 8 || charCount > 128) {
-    charCount = prompt("Pick a number between 8 and 128.");
+    charCount = alert("Pick a number between 8 and 128.");
     // the other prompts under one else statement
   } else {
     confirmNumber = confirm("Do you want to use numbers?");
@@ -136,37 +136,46 @@ function generatePassword() {
     // use else if for multiple options (?)
     // 1/4 chosen
   } else if (confirmNumber) {
-    number;
+    value = number;
   } else if (confirmSpecial) {
-    special;
+    value = special;
   } else if (confirmUpper) {
-    upper;
+    choice = upper;
   } else if (confirmLower) {
-    lower;
+    choice = lower;
     // 2/4 chosen
   } else if (confirmNumber && confirmSpecial) {
-    number.special;
+    choice = number.special;
   } else if (confirmNumber && confirmUpper) {
-    number.upper;
+    choice = number.upper;
   } else if (confirmNumber && confirmLower) {
-    number.lower;
+    choice = number.lower;
   } else if (confirmSpecial && confirmUpper) {
-    special.upper;
+    choice = special.upper;
   } else if (confirmSpecial && confirmLower) {
-    special.lower;
+    choice = special.lower;
   } else if (confirmUpper && confirmLower) {
-    upper.lower;
+    choice = upper.lower;
     // 3/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper) {
-    special.number.upper;
+    choice = special.number.upper;
   } else if (confirmSpecial && confirmNumber && confirmLower) {
-    special.number.lower;
+    choice = special.number.lower;
   } else if (confirmSpecial && confirmUpper && confirmLower) {
-    special.upper.lower;
+    choice = special.upper.lower;
   } else if (confirmNumber && confirmUpper && confirmLower) {
-    number.upper.lower;
+    choice = number.upper.lower;
     // 4/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
-    special.number.upper.lower;
+    choice = special.number.upper.lower;
+  }
+
+  // for loop to randomly select variables
+  for (var i = 0; i < 4; i++) {
+    choice[Math.floor(Math.random() * choice.length)];
+  }
+
+  function writePassword() {
+    document.getElementById("password");
   }
 }
