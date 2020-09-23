@@ -1,0 +1,41 @@
+# 03 JavaScript: Password Generator
+
+this is v confusing lol
+
+Researched Plan:
+
+#variables:
+- number of characters
+- will there be numbers
+- will there be special
+- will there be uppercase
+- will there bee lowercase
+
+#questions
+- how many characters ?
+8-128, alert if nothing entered, alert if too low or high
+
+- click ok for special
+confirm y/n 
+
+- click ok for numbers
+confirm y/n 
+
+- click for lowercase
+confirm y/n 
+
+- click ok for uppercase
+confirm y/n 
+
+#if user cancels all 4
+- alert have to choose
+
+#if / else if
+- one chosen
+- two chosen
+- three chosen
+- four chosen
+
+#for loop ?
+- look up math random options for random selection
+- don't really understand these yet
