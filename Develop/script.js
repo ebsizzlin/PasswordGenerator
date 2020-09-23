@@ -133,6 +133,40 @@ function generatePassword() {
   // ! = not entered // && = and
   if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
     alert("Pick at least one of the four options.");
-    // use else if for multiple options
+    // use else if for multiple options (?)
+    // 1/4 chosen
+  } else if (confirmNumber) {
+    number;
+  } else if (confirmSpecial) {
+    special;
+  } else if (confirmUpper) {
+    upper;
+  } else if (confirmLower) {
+    lower;
+    // 2/4 chosen
+  } else if (confirmNumber && confirmSpecial) {
+    number.special;
+  } else if (confirmNumber && confirmUpper) {
+    number.upper;
+  } else if (confirmNumber && confirmLower) {
+    number.lower;
+  } else if (confirmSpecial && confirmUpper) {
+    special.upper;
+  } else if (confirmSpecial && confirmLower) {
+    special.lower;
+  } else if (confirmUpper && confirmLower) {
+    upper.lower;
+    // 3/4 chosen
+  } else if (confirmSpecial && confirmNumber && confirmUpper) {
+    special.number.upper;
+  } else if (confirmSpecial && confirmNumber && confirmLower) {
+    special.number.lower;
+  } else if (confirmSpecial && confirmUpper && confirmLower) {
+    special.upper.lower;
+  } else if (confirmNumber && confirmUpper && confirmLower) {
+    number.upper.lower;
+    // 4/4 chosen
+  } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
+    special.number.upper.lower;
   }
 }
