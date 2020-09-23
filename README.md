@@ -13,9 +13,9 @@ The purpose of this assignment is to create a random password generator in a bro
 
 # what's probably not working:
 
-- after the alert for not picking a #, the alert for not picking an option comes up even though those haven't been offered yet
-- still not quite grasping for loops
-- i feel like the code is repetative but im not sure how to do it otherwise
+- the for loop
+- generating the actual pw
+- i think i'll have to resubmit, i got a new job this week and fell behind
 
 # screenshots
 

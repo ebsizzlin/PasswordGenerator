@@ -1,5 +1,3 @@
-// i don't really understand the provided assignment code so just going for it here
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
