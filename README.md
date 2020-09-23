@@ -15,7 +15,7 @@ The purpose of this assignment is to create a random password generator in a bro
 
 - after the alert for not picking a #, the alert for not picking an option comes up even though those haven't been offered yet
 - not sure if what i've come up with from googling for loops really works since i don't get the concept in the first place
-- i didn't have time for office hours or tutoring this week so i'm kinda lost, will catch up this week
+- i didn't have time for office hours or tutoring this week so i feel like ive definitely done something wrong
 
 # screenshots
 
@@ -26,3 +26,7 @@ The purpose of this assignment is to create a random password generator in a bro
 ![image](https://user-images.githubusercontent.com/70185995/93964337-58990380-fd2d-11ea-9e0d-cac174fe56e4.png)
 
 ![image](https://user-images.githubusercontent.com/70185995/93964411-7b2b1c80-fd2d-11ea-8a6d-5e09e02cdd6d.png)
+
+# link
+
+https://ebsizzlin.github.io/PasswordGenerator/

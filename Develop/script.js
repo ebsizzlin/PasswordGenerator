@@ -1,3 +1,19 @@
+// i don't really understand the provided assignment code so just going for it here
+
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // variables
 var charCount;
 var confirmNumber;
@@ -96,22 +112,6 @@ lower = [
   "z",
 ];
 
-// i don't really understand the provided assignment code so just going for it here
-
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 // character count statements
 function generatePassword() {
   charCount = prompt("How many characters in the password?");
@@ -140,31 +140,31 @@ function generatePassword() {
   } else if (confirmSpecial) {
     value = special;
   } else if (confirmUpper) {
-    choice = upper;
+    value = upper;
   } else if (confirmLower) {
-    choice = lower;
+    value = lower;
     // 2/4 chosen
   } else if (confirmNumber && confirmSpecial) {
-    choice = number.special;
+    value = number.special;
   } else if (confirmNumber && confirmUpper) {
-    choice = number.upper;
+    value = number.upper;
   } else if (confirmNumber && confirmLower) {
-    choice = number.lower;
+    value = number.lower;
   } else if (confirmSpecial && confirmUpper) {
-    choice = special.upper;
+    value = special.upper;
   } else if (confirmSpecial && confirmLower) {
-    choice = special.lower;
+    value = special.lower;
   } else if (confirmUpper && confirmLower) {
-    choice = upper.lower;
+    value = upper.lower;
     // 3/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper) {
-    choice = special.number.upper;
+    value = special.number.upper;
   } else if (confirmSpecial && confirmNumber && confirmLower) {
-    choice = special.number.lower;
+    value = special.number.lower;
   } else if (confirmSpecial && confirmUpper && confirmLower) {
-    choice = special.upper.lower;
+    value = special.upper.lower;
   } else if (confirmNumber && confirmUpper && confirmLower) {
-    choice = number.upper.lower;
+    value = number.upper.lower;
     // 4/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
     choice = special.number.upper.lower;
@@ -172,7 +172,7 @@ function generatePassword() {
 
   // for loop to randomly select variables
   for (var i = 0; i < 4; i++) {
-    choice[Math.floor(Math.random() * choice.length)];
+    value[Math.floor(Math.random() * value.length)];
   }
 
   function writePassword() {
