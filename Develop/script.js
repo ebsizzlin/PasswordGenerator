@@ -227,12 +227,13 @@ function generatePassword() {
   // for loop
   for (var i = 0; i < charCount; i++) {
     // get a random character out of the eligible pool
-    randomPassword = Math.floor(Math.random() * character_pool.length);
+    randomPassword = Math.floor(Math.random() * charCount.length);
     console.log("randomPassword:", randomPassword);
     // add that character to the randomPassword string
     i++;
   }
-  // alert(randomPassword); // the password
+
+  // to make it appear in the box
   document.getElementById("password").value = password;
-  return;
+  return password;
 }

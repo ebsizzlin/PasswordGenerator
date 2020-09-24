@@ -14,12 +14,12 @@ The purpose of this assignment is to create a random password generator in a bro
 
 # what's probably not working:
 
-- instead of the password, the box says "undefined"
+- instead of the password, the box says "[object HTMLTextAreaElement]"
 - will resubmit after tutoring
 
 # screenshots
 
-<img width="1203" alt="Screen Shot 2020-09-23 at 9 43 53 PM" src="https://user-images.githubusercontent.com/70185995/94091310-f3551900-fde5-11ea-9d62-cc9cedadfbf3.png">
+<img width="1205" alt="Screen Shot 2020-09-23 at 9 54 38 PM" src="https://user-images.githubusercontent.com/70185995/94091903-6e6aff00-fde7-11ea-8806-8cabb7758fbb.png">
 
 <img width="1196" alt="Screen Shot 2020-09-22 at 11 39 55 PM" src="https://user-images.githubusercontent.com/70185995/93964274-3c956200-fd2d-11ea-9530-7c7da2ec2c7e.png">
 
