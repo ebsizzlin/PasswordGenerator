@@ -4,13 +4,16 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  console.log("password:", password);
   var passwordText = document.querySelector("#password");
+  console.log("passwordText:", passwordText);
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+console.log("generateBtn:", generateBtn);
 
 // added later -- variable to store new pw
 var character_pool = [];
@@ -109,25 +112,45 @@ lower = [
 // character count statements
 function generatePassword() {
   var charCount = prompt("How many characters in the password?");
-  // ! = not entered
   if (!charCount) {
     alert("Enter a number!");
-    // || = or
   } else if (charCount < 8 || charCount > 128) {
     charCount = alert("Pick a number between 8 and 128.");
     // the other prompts under one else statement -- separate statements doesn't work
   } else {
     confirmNumber = confirm("Do you want to use numbers?");
+    console.log("confirmNumber:", confirmNumber);
     confirmSpecial = confirm("Do you want to use special characters?");
+    console.log("confirmSpecial:", confirmSpecial);
     confirmUpper = confirm("Do you want to use uppercase letters?");
+    console.log("confirmUpper:", confirmUpper);
     confirmLower = confirm("Do you want to use lowercase letters?");
+    console.log("confirmLower:", confirmLower);
   }
 
-  // if user chooses 0/4 - read something that said push so tried that
-  // ! = not entered // && = and
-  if (!confirmNumber && !confirmSpecial && !confirmUpper && !confirmLower) {
+  if (confirmNumber) {
+    // add numbers to the eligible pool
+    character_pool.push(confirmNumber);
+  }
+  if (confirmSpecial) {
+    // add special characters to the eligible pool
+    character_pool.push(confirmSpecial);
+  }
+  if (confirmUpper) {
+    // add uppercase to the eligible pool
+    character_pool.push(confirmUpper);
+  }
+  if (confirmLower) {
+    // add lowercase to the eligible pool
+    character_pool.push(confirmLower);
+  } else if (
+    !confirmNumber &&
+    !confirmSpecial &&
+    !confirmUpper &&
+    !confirmLower
+  ) {
     alert("Pick at least one of the four options.");
-    // use else if for multiple options (?)
+
     // 1/4 chosen
   } else if (confirmNumber) {
     // value = number;
@@ -185,33 +208,31 @@ function generatePassword() {
     character_pool.push(confirmUpper);
     character_pool.push(confirmLower);
   } else if (confirmNumber && confirmUpper && confirmLower) {
-    value = number.upper.lower;
+    // value = number.upper.lower;
     character_pool.push(confirmNumber);
     character_pool.push(confirmUpper);
     character_pool.push(confirmLower);
 
     // 4/4 chosen
   } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
-    choice = special.number.upper.lower;
-  }
-  character_pool.push(confirmSpecial);
-  character_pool.push(confirmNumber);
-  character_pool.push(confirmUpper);
-  character_pool.push(confirmLower);
-
-  // added later - way to get the actual password to create itself
-  var character_pool = character_pool.join("");
-
-  // while loop added with tutor -- while the pw length is less than desired, add a random character from character_pool at the end
-  while (i < charCount) {
-    console.log("charCount:", charCount);
-    charCount += 1;
-    // character_pool += charCount[i] + "<br>";
-    // i++;
+    // choice = special.number.upper.lower;
+    character_pool.push(confirmSpecial);
+    character_pool.push(confirmNumber);
+    character_pool.push(confirmUpper);
+    character_pool.push(confirmLower);
   }
 
-  return password;
-  //   // concat = joining 2+ strings without changing the original string
-  //   // password = password.concat(newValue);
+  var randomPassword = "";
+
+  // for loop
+  for (var i = 0; i < charCount; i++) {
+    // get a random character out of the eligible pool
+    randomPassword = Math.floor(Math.random() * character_pool.length);
+    console.log("randomPassword:", randomPassword);
+    // add that character to the randomPassword string
+    i++;
+  }
+  // alert(randomPassword); // the password
+  document.getElementById("password").value = password;
+  return;
 }
-// document.getElementById("passwordText").textContent = character_pool;
