@@ -130,19 +130,19 @@ function generatePassword() {
 
   if (confirmNumber) {
     // add numbers to the eligible pool
-    character_pool.push(confirmNumber);
+    character_pool.push(number);
   }
   if (confirmSpecial) {
     // add special characters to the eligible pool
-    character_pool.push(confirmSpecial);
+    character_pool.push(special);
   }
   if (confirmUpper) {
     // add uppercase to the eligible pool
-    character_pool.push(confirmUpper);
+    character_pool.push(upper);
   }
   if (confirmLower) {
     // add lowercase to the eligible pool
-    character_pool.push(confirmLower);
+    character_pool.push(lower);
   } else if (
     !confirmNumber &&
     !confirmSpecial &&
@@ -150,90 +150,103 @@ function generatePassword() {
     !confirmLower
   ) {
     alert("Pick at least one of the four options.");
-
-    // 1/4 chosen
-  } else if (confirmNumber) {
-    // value = number;
-    character_pool.push(confirmNumber);
-  } else if (confirmSpecial) {
-    // value = special;
-    character_pool.push(confirmSpecial);
-  } else if (confirmUpper) {
-    // value = upper;
-    character_pool.push(confirmUpper);
-  } else if (confirmLower) {
-    // value = lower;
-    character_pool.push(confirmLower);
-
-    // 2/4 chosen
-  } else if (confirmNumber && confirmSpecial) {
-    // value = number.special;
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmSpecial);
-  } else if (confirmNumber && confirmUpper) {
-    // value = number.upper;
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmUpper);
-  } else if (confirmNumber && confirmLower) {
-    // value = number.lower;
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmLower);
-  } else if (confirmSpecial && confirmUpper) {
-    // value = special.upper;
-    character_pool.push(confirmSpecial);
-    character_pool.push(confirmUpper);
-  } else if (confirmSpecial && confirmLower) {
-    // value = special.lower;
-    character_pool.push(confirmSpecial);
-    character_pool.push(confirmLower);
-  } else if (confirmUpper && confirmLower) {
-    // value = upper.lower;
-    character_pool.push(confirmUpper);
-    character_pool.push(confirmLower);
-
-    // 3/4 chosen
-  } else if (confirmSpecial && confirmNumber && confirmUpper) {
-    // value = special.number.upper;
-    character_pool.push(confirmSpecial);
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmUpper);
-  } else if (confirmSpecial && confirmNumber && confirmLower) {
-    // value = special.number.lower;
-    character_pool.push(confirmSpecial);
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmLower);
-  } else if (confirmSpecial && confirmUpper && confirmLower) {
-    // value = special.upper.lower;
-    character_pool.push(confirmSpecial);
-    character_pool.push(confirmUpper);
-    character_pool.push(confirmLower);
-  } else if (confirmNumber && confirmUpper && confirmLower) {
-    // value = number.upper.lower;
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmUpper);
-    character_pool.push(confirmLower);
-
-    // 4/4 chosen
-  } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
-    // choice = special.number.upper.lower;
-    character_pool.push(confirmSpecial);
-    character_pool.push(confirmNumber);
-    character_pool.push(confirmUpper);
-    character_pool.push(confirmLower);
   }
+  console.log(character_pool, "character_pool");
+  // 1/4 chosen
+  // } else if (confirmNumber) {
+  //   // value = number;
+  //   character_pool.push(confirmNumber);
+  // } else if (confirmSpecial) {
+  //   // value = special;
+  //   character_pool.push(confirmSpecial);
+  // } else if (confirmUpper) {
+  //   // value = upper;
+  //   character_pool.push(confirmUpper);
+  // } else if (confirmLower) {
+  //   // value = lower;
+  //   character_pool.push(confirmLower);
+
+  //   // 2/4 chosen
+  // } else if (confirmNumber && confirmSpecial) {
+  //   // value = number.special;
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmSpecial);
+  // } else if (confirmNumber && confirmUpper) {
+  //   // value = number.upper;
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmUpper);
+  // } else if (confirmNumber && confirmLower) {
+  //   // value = number.lower;
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmLower);
+  // } else if (confirmSpecial && confirmUpper) {
+  //   // value = special.upper;
+  //   character_pool.push(confirmSpecial);
+  //   character_pool.push(confirmUpper);
+  // } else if (confirmSpecial && confirmLower) {
+  //   // value = special.lower;
+  //   character_pool.push(confirmSpecial);
+  //   character_pool.push(confirmLower);
+  // } else if (confirmUpper && confirmLower) {
+  //   // value = upper.lower;
+  //   character_pool.push(confirmUpper);
+  //   character_pool.push(confirmLower);
+
+  //   // 3/4 chosen
+  // } else if (confirmSpecial && confirmNumber && confirmUpper) {
+  //   // value = special.number.upper;
+  //   character_pool.push(confirmSpecial);
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmUpper);
+  // } else if (confirmSpecial && confirmNumber && confirmLower) {
+  //   // value = special.number.lower;
+  //   character_pool.push(confirmSpecial);
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmLower);
+  // } else if (confirmSpecial && confirmUpper && confirmLower) {
+  //   // value = special.upper.lower;
+  //   character_pool.push(confirmSpecial);
+  //   character_pool.push(confirmUpper);
+  //   character_pool.push(confirmLower);
+  // } else if (confirmNumber && confirmUpper && confirmLower) {
+  //   // value = number.upper.lower;
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmUpper);
+  //   character_pool.push(confirmLower);
+
+  //   // 4/4 chosen
+  // } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
+  //   // choice = special.number.upper.lower;
+  //   character_pool.push(confirmSpecial);
+  //   character_pool.push(confirmNumber);
+  //   character_pool.push(confirmUpper);
+  //   character_pool.push(confirmLower);
+  // }
 
   var randomPassword = "";
 
   // for loop
   for (var i = 0; i < charCount; i++) {
-    // get a random character out of the eligible pool
-    randomPassword = Math.floor(Math.random() * charCount.length);
+    console.log("charCount:", charCount);
+    // randomPassword = Math.floor(Math.random() * charCount.length);
+    randomPassword += Math.floor(Math.random() * character_pool.length);
     console.log("randomPassword:", randomPassword);
-    // add that character to the randomPassword string
-    i++;
   }
 
+  return randomPassword;
+
+  // var superFinal = randomPassword.join("");
+  // console.log(superFinal);
+
+  // document.getElementById("display").textContent = superFinal;
+
+  // document.getElementById("password").innerHTML = writePassword;
+
+  //Generate new password into text area
+  // password.passwordText = randomPassword;
   // to make it appear in the box
-  document.getElementById("password").value = password;
-  return password;
+  // document.getElementById("password").value = password;
+  // return password;
+  // localStorage.setItem("password", JSON.stringify(password));
+  // return randomPassword;
 }
