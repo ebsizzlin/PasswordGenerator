@@ -16,98 +16,16 @@ generateBtn.addEventListener("click", writePassword);
 console.log("generateBtn:", generateBtn);
 
 // added later -- variable to store new pw
-var character_pool = [];
+var character_pool = "";
 
 // characters in variables arrays
-number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+number = "0123456789";
 
-special = [
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "(",
-  ")",
-  "{",
-  "}",
-  "[",
-  "]",
-  ";",
-  ":",
-  "'",
-  ",",
-  ".",
-  "?",
-  "/",
-  "`",
-  "~",
-  "|",
-  "<",
-  "=",
-  ">",
-];
+special = "`~!@#$%^&*()_-+={[}]|\"':;<,>.?/";
 
-upper = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-];
+upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-lower = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+lower = "abcdefghijklmnopqrstuvwxyz";
 
 // character count statements
 function generatePassword() {
@@ -130,19 +48,23 @@ function generatePassword() {
 
   if (confirmNumber) {
     // add numbers to the eligible pool
-    character_pool.push(number);
+    // character_pool.push(number);
+    character_pool += number;
   }
   if (confirmSpecial) {
     // add special characters to the eligible pool
-    character_pool.push(special);
+    // character_pool.push(special);
+    character_pool += special;
   }
   if (confirmUpper) {
     // add uppercase to the eligible pool
-    character_pool.push(upper);
+    // character_pool.push(upper);
+    character_pool += upper;
   }
   if (confirmLower) {
     // add lowercase to the eligible pool
-    character_pool.push(lower);
+    // character_pool.push(lower);
+    character_pool += lower;
   } else if (
     !confirmNumber &&
     !confirmSpecial &&
@@ -151,102 +73,20 @@ function generatePassword() {
   ) {
     alert("Pick at least one of the four options.");
   }
+  console.log(typeof character_pool);
+  // character_pool = character_pool.toString();
   console.log(character_pool, "character_pool");
-  // 1/4 chosen
-  // } else if (confirmNumber) {
-  //   // value = number;
-  //   character_pool.push(confirmNumber);
-  // } else if (confirmSpecial) {
-  //   // value = special;
-  //   character_pool.push(confirmSpecial);
-  // } else if (confirmUpper) {
-  //   // value = upper;
-  //   character_pool.push(confirmUpper);
-  // } else if (confirmLower) {
-  //   // value = lower;
-  //   character_pool.push(confirmLower);
-
-  //   // 2/4 chosen
-  // } else if (confirmNumber && confirmSpecial) {
-  //   // value = number.special;
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmSpecial);
-  // } else if (confirmNumber && confirmUpper) {
-  //   // value = number.upper;
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmUpper);
-  // } else if (confirmNumber && confirmLower) {
-  //   // value = number.lower;
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmLower);
-  // } else if (confirmSpecial && confirmUpper) {
-  //   // value = special.upper;
-  //   character_pool.push(confirmSpecial);
-  //   character_pool.push(confirmUpper);
-  // } else if (confirmSpecial && confirmLower) {
-  //   // value = special.lower;
-  //   character_pool.push(confirmSpecial);
-  //   character_pool.push(confirmLower);
-  // } else if (confirmUpper && confirmLower) {
-  //   // value = upper.lower;
-  //   character_pool.push(confirmUpper);
-  //   character_pool.push(confirmLower);
-
-  //   // 3/4 chosen
-  // } else if (confirmSpecial && confirmNumber && confirmUpper) {
-  //   // value = special.number.upper;
-  //   character_pool.push(confirmSpecial);
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmUpper);
-  // } else if (confirmSpecial && confirmNumber && confirmLower) {
-  //   // value = special.number.lower;
-  //   character_pool.push(confirmSpecial);
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmLower);
-  // } else if (confirmSpecial && confirmUpper && confirmLower) {
-  //   // value = special.upper.lower;
-  //   character_pool.push(confirmSpecial);
-  //   character_pool.push(confirmUpper);
-  //   character_pool.push(confirmLower);
-  // } else if (confirmNumber && confirmUpper && confirmLower) {
-  //   // value = number.upper.lower;
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmUpper);
-  //   character_pool.push(confirmLower);
-
-  //   // 4/4 chosen
-  // } else if (confirmSpecial && confirmNumber && confirmUpper && confirmLower) {
-  //   // choice = special.number.upper.lower;
-  //   character_pool.push(confirmSpecial);
-  //   character_pool.push(confirmNumber);
-  //   character_pool.push(confirmUpper);
-  //   character_pool.push(confirmLower);
-  // }
 
   var randomPassword = "";
 
-  // for loop
+  // for loop (corrected after much help from tutor !!)
   for (var i = 0; i < charCount; i++) {
     console.log("charCount:", charCount);
     // randomPassword = Math.floor(Math.random() * charCount.length);
-    randomPassword += Math.floor(Math.random() * character_pool.length);
+    var index = Math.floor(Math.random() * character_pool.length);
+    randomPassword += character_pool[index];
     console.log("randomPassword:", randomPassword);
   }
 
   return randomPassword;
-
-  // var superFinal = randomPassword.join("");
-  // console.log(superFinal);
-
-  // document.getElementById("display").textContent = superFinal;
-
-  // document.getElementById("password").innerHTML = writePassword;
-
-  //Generate new password into text area
-  // password.passwordText = randomPassword;
-  // to make it appear in the box
-  // document.getElementById("password").value = password;
-  // return password;
-  // localStorage.setItem("password", JSON.stringify(password));
-  // return randomPassword;
 }

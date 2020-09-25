@@ -2,32 +2,48 @@
 
 The purpose of this assignment is to create a random password generator in a browser with prompts.
 
+## User Story
+
+AS AN employee with access to sensitive data
+I WANT to randomly generate a password that meets certain criteria
+SO THAT I can create a strong password that provides greater security
+
+## Acceptance Criteria
+
+GIVEN I need a new, secure password
+WHEN I click the button to generate a password
+THEN I am presented with a series of prompts for password criteria
+WHEN prompted for password criteria
+THEN I select which criteria to include in the password
+WHEN prompted for the length of the password
+THEN I choose a length of at least 8 characters and no more than 128 characters
+WHEN prompted for character types to include in the password
+THEN I choose lowercase, uppercase, numeric, and/or special characters
+WHEN I answer each prompt
+THEN my input should be validated and at least one character type should be selected
+WHEN all prompts are answered
+THEN a password is generated that matches the selected criteria
+WHEN the password is generated
+THEN the password is either displayed in an alert or written to the page
+
 # completed:
 
-- variables listed
-- empty array for password created
+- generate button created
+- variables defined in strings
 - all the prompted questions are asked
-- alert for 0/4 choices
-- if and else if statements
-- for loop and iterations defined
-- alert prepared
-
-# what's probably not working:
-
-- instead of the password, the box says "[object HTMLTextAreaElement]"
-- will resubmit after tutoring
+- if and else if statements defined
+- for loop defined (w/0 .length)
+- random password appears in box
 
 # screenshots
 
-<img width="1205" alt="Screen Shot 2020-09-23 at 9 54 38 PM" src="https://user-images.githubusercontent.com/70185995/94091903-6e6aff00-fde7-11ea-8806-8cabb7758fbb.png">
+<img width="1142" alt="Screen Shot 2020-09-24 at 10 12 49 PM" src="https://user-images.githubusercontent.com/70185995/94218781-3cbf6a00-feb3-11ea-9b1e-04237980baaa.png">
 
-<img width="1196" alt="Screen Shot 2020-09-22 at 11 39 55 PM" src="https://user-images.githubusercontent.com/70185995/93964274-3c956200-fd2d-11ea-9530-7c7da2ec2c7e.png">
+<img width="1140" alt="Screen Shot 2020-09-24 at 10 12 59 PM" src="https://user-images.githubusercontent.com/70185995/94218789-3e892d80-feb3-11ea-890a-9044b9ee34d9.png">
 
-![image](https://user-images.githubusercontent.com/70185995/93964299-4919ba80-fd2d-11ea-9a32-f97739bf993a.png)
+<img width="1146" alt="Screen Shot 2020-09-24 at 10 13 09 PM" src="https://user-images.githubusercontent.com/70185995/94218794-41841e00-feb3-11ea-93ff-5a64882d845d.png">
 
-![image](https://user-images.githubusercontent.com/70185995/93964337-58990380-fd2d-11ea-9e0d-cac174fe56e4.png)
-
-![image](https://user-images.githubusercontent.com/70185995/93964411-7b2b1c80-fd2d-11ea-8a6d-5e09e02cdd6d.png)
+<img width="1148" alt="Screen Shot 2020-09-24 at 10 13 20 PM" src="https://user-images.githubusercontent.com/70185995/94218800-43e67800-feb3-11ea-9081-c57a59c8c1a1.png">
 
 # link
 
